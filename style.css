@@ -15,8 +15,9 @@ body {
     text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
     text-decoration: none;
     text-align: end;
-    font-size: 40px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .header {
     background-image: url("Screenshot_2.png");
@@ -101,11 +102,25 @@ h2{
     background-color: purple;
     text-align: center;
     color: white;
-    font-size: 40px;
+    font-size: 32px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 
     'Lucida Sans Unicode';
     text-shadow: 2px 2px 1px black, 0 -10px 15px rgb(0, 0, 0), 0px 10px 15px rgb(0, 0, 0);
 }
+h3{
+    outline-style: double;
+    outline-color: white;
+    outline-width: 2px;
+    border-radius: 5px;
+    box-shadow: 5px 5px white;
+    background-color: purple;
+    text-align: center;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 
+    'Lucida Sans Unicode';
+    text-shadow: 2px 2px 1px black, 0 -10px 15px rgb(0, 0, 0), 0px 10px 15px rgb(0, 0, 0);
+}
+
 p{
     text-align: center;
 }
@@ -116,6 +131,23 @@ p{
     float: left;
     width: 50%;
     padding: 15px;
+  }
+
+  .column a{
+    outline-style: double;
+    outline-color: white;
+    outline-width: 2px;
+    border-radius: 5px;
+    box-shadow: 5px 5px white;
+    background-color: purple;
+    text-align: center;
+    color: white;
+    font-size: 32px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 
+    'Lucida Sans Unicode';
+    text-shadow: 2px 2px 1px black, 0 -10px 15px rgb(0, 0, 0), 0px 10px 15px rgb(0, 0, 0);
+    text-decoration: none;
+    margin: 0;
   }
   
 .row:after {
@@ -150,6 +182,9 @@ p{
     .login{
         width: 100%;
     }
+    .imagemescrita{
+        width: 100%;
+    }
 }
 /* para alinhar os jogos */
 .imagens{
@@ -157,11 +192,57 @@ p{
     display: block;
 }
 
+/* Segunda parte do site */
+
+/*faixa */
+.banner{
+    background-color: red;
+}
+.faixa{
+    margin: 0 5% 0 5%;
+}
+
+
+/* IMAGEM */
+.imagemescrita{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.219);
+    margin-bottom: 1%;
+}
+
+h4{
+    text-align: center;
+}
+.imagemescrita a{
+    outline-style: double;
+    outline-color: white;
+    outline-width: 2px;
+    border-radius: 5px;
+    box-shadow: 5px 5px white;
+    background-color: purple;
+    text-align: center;
+    color: white;
+    font-size: 32px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 
+    'Lucida Sans Unicode';
+    text-shadow: 2px 2px 1px black, 0 -10px 15px rgb(0, 0, 0), 0px 10px 15px rgb(0, 0, 0);
+    text-decoration: none;
+    margin: 0;
+    
+}
+
   /* rodapé */
+
 .footer {
     box-shadow: 0px -10px 2px white;
     background-color: rgb(143, 3, 148);
     color:rgb(255, 255, 255);
     padding: 10px;
+    margin: 5% 0 0;
     text-align: center;
 }
