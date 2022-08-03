@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="ezgames.ico" type="image/x-icon">
+        <title>EzGames &copy;</title>
+        <link rel="stylesheet" href="style2.css">
+        <script defer src="main.js"></script>
+    </head>
+    <body>
+
+        <div class="header">
+            <div class="logo">
+                <img src="ezgam.png" width="250" height="250" alt="">
+            </div>
+        </div>
+        <div class="toponaveg">
+            <button data-modal-target="#modal"> CONTATOS </button>
+        </div>
+
+        <div class="modal" id="modal">
+            <div class="modal-header">
+                <div class="title">CONTATOS</div>
+                <button data-close-button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <h2>
+                    CONTATO 1
+                <ul>
+                    <li>+55 91234-4567</li>
+                    <li>email1234@email.com</li>
+                    <li>@usuariotag</li>
+                </ul>
+                </h2>
+                <h2>
+                    CONTATO 2
+                <ul>
+                    <li>+55 98002-89222</li>
+                    <li>email4321@email.com</li>
+                    <li>@usuariotag2</li>
+                </ul>
+                </h2>
+            </div>
+        </div>
+        <div id="overlay"></div>
+
+        <div class="telalogin">
+            <h2>REGISTRO</h2>
+
+            <div class="login-form">
+
+                <div class="loginsenha">
+                    <input class="input-form" type="email" id="regemail" name="email" autocomplete="off"/>
+                    <span class="focus-input-form" data-placeholder="E-mail"></span>
+                </div>
+
+                <div class="loginsenha">
+                    <input class="input-form" type="text" id="regusuario" name="usuario" autocomplete="off"/>
+                    <span class="focus-input-form" data-placeholder="Usuário"></span>
+                </div>
+
+                <div class="loginsenha">
+                    <input class="input-form" type="password" id="regsenha" name="senha"/>
+                    <span class="focus-input-form" data-placeholder="Senha"></span>
+                    <span id="alert">Senha deve ser maior que 5 números</span>
+                </div>
+                <div class="container.login-form-btn">
+                    <button onclick="registrar()" id="confirma"> REGISTRAR </button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            let inputs = document.getElementsByClassName("input-form");
+            for(let input of inputs) {
+                input.addEventListener("blur", function(){
+                    if(input.value.trim() != "") {
+                        input.classList.add("has-val");
+                    }else {
+                        input.classList.remove("has-val");
+                    }
+                });
+            }
+        </script>
+
+        <div class="nocont">
+            <p style="color: white">
+                Já tem uma conta?
+            </p>
+        <form action="index.html">
+            <button id="botaologar">LOGIN</button>
+        </form>
+        </div>
+
+        <div class="footer">
+            <p>&copy; EzGames</p>
+        </div>
+    </body>
+</html>

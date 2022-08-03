@@ -5,8 +5,8 @@
 body {
     margin: 0;
     background-image: url("background.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-repeat: round;
+    background-size: contain;
     background-color: black;
 }
 /* header */
@@ -20,48 +20,17 @@ body {
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .header {
+    text-align: center;
     background-image: url("Screenshot_2.png");
     background-repeat: initial;
     padding: 20px;
     padding-bottom: 40px;
 }
-/* separar a logo do login */
-.logo{
-    float:left;
-    width: 60%;
-    padding: 10px;
-}
-.header:after{
-    content: "";
-    display: table;
-    clear: both;
-}
+
+
 
 
 /* separar o login do cadastro */
-.login{
-    outline-style: double;
-    outline-color: white;
-    outline-width: 2px;
-    border-radius: 5px;
-    box-shadow: 5px 5px white;
-    background-color: purple;
-    text-align: center;
-    float: left;
-    width: 50%;
-    padding: 10px;
-}
-
-.logo:after{
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.login:hover{
-    background-color: white;
-    color: rgb(0, 0, 0);
-}
 /* navegação do topo */
 .toponaveg {
     padding-bottom: 0px;
@@ -90,6 +59,101 @@ body {
     color: rgb(0, 0, 0);
 }
 
+.toponaveg button{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+    font-size: 25px;
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 0px 16px;
+    text-decoration: none;
+    background-color: transparent;
+    border: 0ch;
+    cursor: pointer;
+}
+
+.toponaveg button:hover{
+    background-color: white;
+    color: rgb(0, 0, 0);
+}
+
+.modal {
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid white;
+    border-radius: 10px;
+    z-index: 10;
+    outline-style: double;
+    outline-color: white;
+    width: 700px;
+    max-width: 80%;
+    outline-width: 2px;
+    box-shadow: 5px 5px white;
+    background-color: rgb(61, 3, 61);
+    color: white;
+    font-size: 32px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 
+    'Lucida Sans Unicode';
+    text-shadow: 2px 2px 1px black;
+}
+
+.modal ul{
+    color: white;
+    text-align: initial;
+}
+
+.modal.active{
+    transform:translate(-50%, -50%) scale(1);
+}
+.modal-header{
+    background-color: purple;
+    padding:10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid white;
+}
+
+.title{
+    font-size: 32px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 
+    'Lucida Sans Unicode';
+}
+.modal-header .close-button{
+    color: white;
+    text-shadow: 2px 2px 1px black;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.modal-body{
+    padding: 10px 15px;
+}
+
+#overlay{
+    transition: 200ms ease-in-out;
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+}
+
+#overlay.active{
+    opacity: 1;
+    pointer-events: all;
+}
 
 
 h2{
@@ -104,60 +168,111 @@ h2{
     font-size: 32px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 
     'Lucida Sans Unicode';
-    text-shadow: 2px 2px 1px black, 0 -10px 15px rgb(0, 0, 0), 0px 10px 15px rgb(0, 0, 0);
+    text-shadow: 2px 2px 1px rgb(36, 0, 165), 0 -10px 15px rgb(40, 2, 143), 0px 10px 15px rgb(67, 2, 189);
 }
 /* tela de login */
 .telalogin{
-    border-radius: 5%;
     text-align: center;
-    width: 1000px;
+    border-radius: 5%;
+    width: 500px;
     background-color: rgba(255, 255, 255, 0.205);
     margin: auto;
     margin-top: 10px;
 }
-.logintela{
-    border-radius: 5%;
-    text-align: center;
-    width: 500px;
-    height: 500px;
-    background-color: purple;
+
+.login-form{
+    width: 100%;
+}
+.loginsenha{
+    width: 100%;
+    position: relative;
+    border-bottom: 2px solid white;
 }
 
-label{
+.input-form{
+    border: none;
+    font-size: 30px;
     color: white;
-}
-input[type=text], select, textarea {
-border-radius: 5%;
-  width: 50%;
-  padding: 12px 20px;
-  margin: 25px 50px;
-  box-sizing: border-box;
-  border: 3px solid #ccc;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  outline: none;
+    line-height: 1.2;
+    display: block;
+    width: 100%;
+    background: transparent;
+    margin: 15px 0px;
+    padding: 0 5 px;
+    height: 52px;
 }
 
-input[type=text]:focus {
-  border: 3px solid #555;
+.focus-input-form {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
 }
 
-input[type=password], select, textarea {
-    border-radius: 5%;
-      width: 50%;
-      padding: 12px 20px;
-      margin: 25px 50px;
-      box-sizing: border-box;
-      border: 3px solid #ccc;
-      -webkit-transition: 0.5s;
-      transition: 0.5s;
-      outline: none;
-    }
-    
-    input[type=password]:focus {
-      border: 3px solid #555;
-    }
-button{
+textarea:focus, input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+.focus-input-form::before{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 
+    'Lucida Sans Unicode';
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    transition: all 0.4s;
+    background-color: rgb(255, 0, 170);
+}
+
+.focus-input-form::after{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 
+    'Lucida Sans Unicode';
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    line-height: 1.2;
+    content: attr(data-placeholder);
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 15px;
+    left: 0px;
+    padding: 5px;
+    transition: all 0.4s;
+}
+
+#alert{
+    display: none;
+    color:red
+}
+
+.input-form:focus + .focus-input-form::after{
+    top: -20px;
+    font-size: 15px;
+}
+
+.input-form:focus + .focus-input-form::before{
+    width: 100%;
+}
+
+
+.has-val.input-form + .focus-input-form::after{
+    top: -20px;
+    font-size: 15px;
+}
+
+.has-val.input-form + .focus-input-form::before{
+    width: 100%;
+}
+
+
+#acesso{
         outline-style: double;
         outline-color: white;
         outline-width: 2px;
@@ -169,9 +284,98 @@ button{
         color: white;
         padding: 16px 32px;
         text-decoration: none;
-        margin: 10px 2px;
+        margin: 15px 2px;
         cursor: pointer;
+        transition: all 1s;
+        -webkit-transition: -webkit-transform .5s ease;
+        transition: transform .5s ease;
       }
+
+#acesso:hover{
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: all 1s;
+    background-color: rgb(255, 0, 217);
+}
+
+#botaoregistro{
+    outline-style: double;
+    outline-color: white;
+    outline-width: 2px;
+    border-radius: 5px;
+    box-shadow: 5px 5px white;
+    background-color: purple;
+    text-align: center;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 15px 2px;
+    cursor: pointer;
+    transition: all 1s;
+    -webkit-transition: -webkit-transform .5s ease;
+    transition: transform .5s ease;
+  }
+
+#botaoregistro:hover{
+-webkit-transform: scale(1.1);
+transform: scale(1.1);
+transition: all 1s;
+background-color: rgb(255, 0, 217);
+}
+
+#confirma{
+    outline-style: double;
+    outline-color: white;
+    outline-width: 2px;
+    border-radius: 5px;
+    box-shadow: 5px 5px white;
+    background-color: purple;
+    text-align: center;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 15px 2px;
+    cursor: pointer;
+    transition: all 1s;
+    -webkit-transition: -webkit-transform .5s ease;
+    transition: transform .5s ease;
+  }
+
+#confirma:hover{
+-webkit-transform: scale(1.1);
+transform: scale(1.1);
+transition: all 1s;
+background-color: rgb(255, 0, 217);
+}
+
+#botaologar{
+    outline-style: double;
+    outline-color: white;
+    outline-width: 2px;
+    border-radius: 5px;
+    box-shadow: 5px 5px white;
+    background-color: purple;
+    text-align: center;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 15px 2px;
+    cursor: pointer;
+    transition: all 1s;
+    -webkit-transition: -webkit-transform .5s ease;
+    transition: transform .5s ease;
+  }
+
+#botaologar:hover{
+-webkit-transform: scale(1.1);
+transform: scale(1.1);
+transition: all 1s;
+background-color: rgb(255, 0, 217);
+}
+
   /* rodapé */
 .nocont{
     text-align: center;
@@ -180,7 +384,7 @@ button{
     box-shadow: 0px -10px 2px white;
     background-color: rgb(143, 3, 148);
     color:rgb(255, 255, 255);
-    padding: 10px;
+    padding: 15px;
     margin: 5% 0 0;
     text-align: center;
 }
