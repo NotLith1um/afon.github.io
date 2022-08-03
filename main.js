@@ -20,14 +20,14 @@ function registrar(){
     var email = document.getElementById("regemail")
     var senha = document.getElementById("regsenha");
 
-    if(usuario.value != "" || senha.value != "" || email.value != ""){
+    if(usuario.value != "" && senha.value != "" && email.value != ""){
     localStorage.setItem(confirma, true);
 
     window.location.href = "principal.html";
 
     }
     else{
-        alert("Usuário ou senha inválidos!")
+        alert("Não pode continuar sem informações.")
     }
 }
 
